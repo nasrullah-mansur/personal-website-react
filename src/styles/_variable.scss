@@ -1,0 +1,36 @@
+
+// Font Family 
+$barlow: 'Barlow', sans-serif;
+$openSans: 'Open Sans', sans-serif;
+
+// Responsive Variables
+$over:'(min-width: 1800px)';
+$xxxl: 'only screen and (min-width: 1600px) and (max-width: 1799px)';
+$xxl: '(max-width: 1599px)';
+$xl: '(max-width: 1399px)';
+$lg: '(max-width: 1199px)';
+$md:'(max-width: 991px)';
+$sm: '(max-width: 767px)';
+$xs:'(max-width: 576px)';
+
+$colors: (
+    common: (
+        white: #fff,
+        black: #181818,
+
+    ),
+    body: (
+        heading: #0A111C,
+        text: #605F62,
+    ),
+
+    theme: (
+        primary: #CF0000,
+
+    ),
+    bg: (
+        dark: #EDEDED,
+        gray: #605F62,
+        light: #F6F6F6,
+    )
+)

@@ -1,0 +1,19 @@
+.copy-right{
+    background: var(--clr-bg-dark);
+    padding: 15px 0;
+     text-align: center;
+
+     a:hover {
+        color: var(--clr-theme-primary);
+    }
+}
+
+@media (max-width:576px) {
+    .copy-right{
+
+      text-align: center ;
+      p.text-start{
+        text-align: center !important;
+      }
+    }
+}

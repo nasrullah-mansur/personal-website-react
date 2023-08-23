@@ -1,0 +1,117 @@
+.banner-area {
+    position: relative;
+    background-image: url(../../../public/images/banner/banner-bg.jpg);
+    .banner-left {
+      margin-top: 65px;
+      position: relative;
+      @media #{$md} {
+        margin-top: 140px;
+      }
+      @media #{$sm} {
+        margin-top: 120px;
+      }
+    }
+  
+    .sub-heading {
+      font-size: 18px;
+      line-height: 1.2;
+      color: var(--clr-theme-primary);
+      @media #{$sm} {
+        font-size: 16px;
+      }
+    }
+    .banner-title {
+      font-size: 64px;
+      margin: 5px 0;
+      line-height: 1.1;
+      color: var(--clr-body-heading);
+  
+      @media #{$lg} {
+        font-size: 50px;
+      }
+      @media #{$sm} {
+        font-size: 40px;
+      }
+    }
+    .deg {
+      text-transform: capitalize;
+      margin-bottom: 35px;
+      color: #333;
+      @media #{$sm} {
+        font-size: 15px;
+      }
+    }
+    ul.social-icons {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 40px;
+  
+      li {
+        a {
+          font-size: 18px;
+          height: 40px;
+          width: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 5px;
+          border: 1px solid var(--clr-theme-primary);
+          color: var(--clr-theme-primary);
+          &:hover {
+            background: var(--clr-theme-primary);
+            color: var(--clr-common-white);
+          }
+        }
+      }
+    }
+    .banner-right {
+      text-align: center;
+      margin-top: 100px;
+      position: relative;
+      @media #{$md} {
+        margin-top: 35px;
+      }
+    }
+    .exp-block {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 15px;
+      background: #fff;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+      border-radius: 5px;
+      .amount {
+        position: relative;
+        font-size: 46px;
+        font-weight: 600;
+        color: var(--clr-theme-primary);
+        margin-right: 20px;
+        font-family: $barlow;
+        .plus {
+          position: absolute;
+          font-size: 30px;
+          line-height: 1;
+          top: 5px;
+        }
+      }
+      .title {
+        line-height: 1.4;
+        font-size: 14px;
+        text-transform: capitalize;
+        margin: 0;
+      }
+      &.project {
+        bottom: 10%;
+        left: 8%;
+      }
+      &.experience {
+        top: 30%;
+        right: 23%;
+        .amount {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  
