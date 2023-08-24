@@ -1,6 +1,9 @@
 "use client";
 import React, { useState } from 'react';
 import { FaDesktop } from 'react-icons/fa';
+import { portfolioCategories } from './portfolioData';
+
+import './portfolio.scss';
 
 function Portfolio() {
     const [show, setShow] = useState(false);
@@ -21,11 +24,9 @@ function Portfolio() {
                 <div className="col-lg-10">
                     <div className="portfolio-nav">
                         <a href="#" className="active-nav">All</a>
-                        <a href="#">Web Design</a>
-                        <a href="#">Web Development</a>
-                        <a href="#">React JS</a>
-                        <a href="#">Node JS</a>
-                        <a href="#">Graphic Design</a>
+                        {portfolioCategories?.map((item, i) => {
+                            return <a key={i} href="#">{item}</a>;
+                        })}
                     </div>
                 </div>
                 <div className="col-lg-2 text-center text-md-start">
@@ -109,7 +110,7 @@ function Portfolio() {
         </div>
     </section>
 
-    <div class={`popup-overlay ${show && 'active-overlay'}`} onClick={handlePopup}></div>
+    <div className={`popup-overlay ${show && 'active-overlay'}`} onClick={handlePopup}></div>
     <div className={`portfolio-popup ${show && 'active'}`}>
         <div className="popup-cross-icon"><i className="fas fa-times"></i></div>
         <div className="popup-icon">

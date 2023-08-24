@@ -3,6 +3,8 @@
 import React, { Fragment, useState } from 'react';
 import { GrClose, GrLocation, GrPhone } from 'react-icons/gr';
 import { FaRegEnvelope } from 'react-icons/fa';
+import navbar from '@/data/navbar';
+import contactData from '@/data/contact';
 
 function Header() {
 
@@ -15,6 +17,8 @@ function Header() {
     })
 
   } 
+
+  
 
   return (
     <Fragment>
@@ -32,21 +36,13 @@ function Header() {
                       <div className="menu-right">
                           <nav className="main-menu d-none d-lg-block" id="mobile-menu">
                               <ul>
-                                  <li>
-                                      <a href="#banner">Home</a>
-                                  </li>
-                                  <li>
-                                      <a href="#about">About</a>
-                                  </li>
-                                  <li>
-                                      <a href="#services">Services</a>
-                                  </li>
-                                  <li>
-                                      <a href="#portfolio">Portfolio</a>
-                                  </li>
-                                  <li>
-                                      <a href="#contact">Contact</a>
-                                  </li>
+                                {navbar?.map((item, i) => {
+                                  return (
+                                    <li key={i}>
+                                        <a href={item.url}>{item.label}</a>
+                                    </li>
+                                  )
+                                })}
                               </ul>
                           </nav>
                           <div className="menu-btn d-flex align-items-center">
@@ -89,21 +85,21 @@ function Header() {
                     <div className="icon">
                         <GrLocation />
                     </div>
-                    <span>4929 Thorn Street Crow heart, WY 82512</span>
+                    <span>{contactData?.address}</span>
                 </li>
                 <li>
                     <div className="icon">
                         <GrPhone />
                     </div>
                     <span>
-                        <a href="tel:+8801728619733">+8801728619733</a>
+                        <a href={'tel:'+contactData?.phone}>{contactData?.phone}</a>
                     </span>
                 </li>
                 <li>
                     <div className="icon">
                         <FaRegEnvelope />
                     </div>
-                    <span><a href="mailto:nasrullah.cit.bd@gmail.com">nasrullah.cit.bd@gmail.com</a></span>
+                    <span><a href={'mailto:'+contactData?.email}>{contactData?.email}</a></span>
                 </li>
             </ul>
         </div>

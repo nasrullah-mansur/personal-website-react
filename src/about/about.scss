@@ -1,0 +1,46 @@
+@import '../styles/variable';
+
+.about-area {
+    @media #{$sm} {
+      text-align: center;
+    }
+    .about-img {
+      img {
+        width: 100%;
+      }
+      @media #{$md} {
+        margin-top: 45px;
+      }
+    }
+    .about-content {
+      padding-left: 20px;
+      .section-heading {
+        margin-bottom: 30px;
+        @media #{$sm} {
+          margin-bottom: 25px;
+        }
+      }
+      @media #{$sm} {
+        padding-left: 0;
+      }
+      p {
+        font-size: 16px;
+        line-height: 26px;
+      }
+      .about-desc {
+        margin-bottom: 15px;
+        font-size: 16px;
+        line-height: 26px;
+      }
+      .about-btns {
+        margin-top: 35px;
+        display: flex;
+        gap: 20px;
+        @media #{$sm} {
+          justify-content: center;
+        }
+      }
+    }
+  }
+  
+  

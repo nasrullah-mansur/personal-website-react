@@ -1,15 +1,15 @@
 import React from 'react';
 import { FaPhoneAlt, FaRegAddressCard, FaRegEnvelope } from 'react-icons/fa';
+import contactSectionData from './contactSectionData';
+
+import './contact.scss';
 
 function Contact() {
   return (
     <section className="contact-area section-padding" id="contact">
         <div className="container">
             <h4 className="sub-title">Contact me</h4>
-            <h2 className="section-heading">
-                I'm always open to discussing product design work or
-                partnerships.
-            </h2>
+            <h2 className="section-heading">{contactSectionData?.sectionTitle}</h2>
             <div className="row align-items-center">
                 <div className="col-lg-7">
                     <div className="contact-form">
@@ -34,11 +34,7 @@ function Contact() {
                 <div className="col-lg-5">
                     <div className="address">
                         <h3>My ADDRESS</h3>
-                        <p>
-                            There are many variations of passages of
-                            Lorem Ipsum available but the majority have
-                            suffered
-                        </p>
+                        <p>{contactSectionData?.addressTitle}</p>
                         <div className="address-list">
                             <div className="address-item">
                                 <div className="address-icon">

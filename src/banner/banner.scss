@@ -1,6 +1,8 @@
+@import '../styles/variable';
+
 .banner-area {
     position: relative;
-    background-image: url(../../../public/images/banner/banner-bg.jpg);
+    background-image: url(../../public/images/banner/banner-bg.jpg);
     .banner-left {
       margin-top: 65px;
       position: relative;

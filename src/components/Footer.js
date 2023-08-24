@@ -1,4 +1,5 @@
-import React from 'react'
+import { footerData } from '@/data/footer';
+import React, { Fragment } from 'react'
 
 function Footer() {
   return (
@@ -6,14 +7,19 @@ function Footer() {
         <div className="container">
             <div className="row">
                 <div className="col-lg-6">
-                    <p className="left-text">
-                        Copyright 2022 @ Nasrullah Mansur | All Right
-                        Resurved
-                    </p>
+                    <p className="left-text">{footerData?.copyrightText}</p>
                 </div>
                 <div className="col-lg-6">
                     <p className="text-start text-lg-end">
-                        <a href="#">About</a> | <a href="#">Privacy</a> | <a href="#">Terms &amp; Condition</a>
+                    {footerData?.copyrightLink.map((item, i) => {
+                        return (
+                            <Fragment key={i}>
+                                <a href={item.url}>{item.label}</a>
+                                {i != footerData?.copyrightLink.length - 1 && <span>|</span>}
+                            </Fragment>
+                        );
+                    })}
+                         
                     </p>
                 </div>
             </div>
