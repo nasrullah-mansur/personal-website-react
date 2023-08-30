@@ -35,17 +35,12 @@ body {
   font-style: normal;
   color: var(--clr-body-text);
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 .img,
 img {
   max-width: 100%;
-  @include transition(0.3s);
-}
-
-a,
-.button,
-button {
   @include transition(0.3s);
 }
 
@@ -57,7 +52,7 @@ a:focus,
 
 a:focus,
 a:hover {
-  color: inherit;
+  // color: initial;
   text-decoration: none;
 }
 

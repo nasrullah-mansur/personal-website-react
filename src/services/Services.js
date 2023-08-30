@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BsCodeSlash } from 'react-icons/bs';
 import { GrClose } from 'react-icons/gr';
 import servicesData from './servicesData';
+import { motion } from 'framer-motion';
 
 import './services.scss';
 
@@ -14,8 +15,6 @@ function Services() {
         setShow(prev => {
             return !prev;
         })
-
-        
     };
 
   return (
@@ -28,7 +27,13 @@ function Services() {
             <div className="row">
                 {servicesData?.map((item, i) => {
                     return (
-                        <div key={i} className="col-lg-4 col-md-6" onClick={() => handlePopup(i)}>
+                        <motion.div
+                        initial={{scale: 1.5}}
+                        whileInView={{scale: 1}}
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        
+                        key={i} className="col-lg-4 col-md-6" onClick={() => handlePopup(i)}>
                             <div className="service-item">
                                 <span className="service-icon">
                                     <BsCodeSlash />
@@ -36,7 +41,7 @@ function Services() {
                                 <h3 className="service-heading">{item.title}</h3>
                                 <p className="service-desc">{item.description}</p>
                             </div>
-                        </div>
+                        </motion.div>
                     )
                 })}
             </div>

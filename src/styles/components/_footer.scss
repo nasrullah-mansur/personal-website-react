@@ -1,7 +1,6 @@
 .copy-right{
     background: var(--clr-bg-dark);
     padding: 15px 0;
-     text-align: center;
 
      a:hover {
         color: var(--clr-theme-primary);
@@ -12,8 +11,6 @@
     .copy-right{
 
       text-align: center ;
-      p.text-start{
-        text-align: center !important;
-      }
+      
     }
 }

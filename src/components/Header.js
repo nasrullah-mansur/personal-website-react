@@ -3,33 +3,40 @@
 import React, { Fragment, useState } from 'react';
 import { GrClose, GrLocation, GrPhone } from 'react-icons/gr';
 import { FaRegEnvelope } from 'react-icons/fa';
-import navbar from '@/data/navbar';
+import {navbar, themeInfo } from '@/data/navbar';
 import contactData from '@/data/contact';
+import { motion } from 'framer-motion';
 
 function Header() {
-
   const [open, setOpen] = useState(false);
+  const [fixed, setFixed] = useState('');
 
   // Responsive Handler;
   const responsiveHandler = () => {
     setOpen((prev) => {
       return !prev;
     })
-
   } 
 
-  
+    // Fixed menu to top;
+    window.addEventListener('scroll', function(i){
+        if(window.pageYOffset >= 200) {
+            setFixed('fixed-top');
+        } else {
+            setFixed('');
+        }
+    })
 
   return (
     <Fragment>
-      <header className="header-area">
+      <header className={`header-area ${fixed}`}>
           <div className="header-menu">
               <div className="container">
                   <div className="menu-wrap">
                       <div className="menu-left">
                           <div className="header-logo">
                               <a href="/">
-                                  <img src="./images/logo.png" alt="Brand logo" />
+                                  <img src={themeInfo.logo} alt={themeInfo.title} />
                               </a>
                           </div>
                       </div>
@@ -46,9 +53,12 @@ function Header() {
                               </ul>
                           </nav>
                           <div className="menu-btn d-flex align-items-center">
-                              <a href="#" className="header-btn prim-btn d-md-block d-none">
+                              <motion.a
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                                href="#" className="header-btn prim-btn d-md-block d-none">
                                   Download CV
-                              </a>
+                              </motion.a>
                               <div className="menu-bar d-lg-none">
                                   <div className="navbar-sign side-toggle ml-20" onClick={responsiveHandler}>
                                       <span className="menu-line-1"></span>
@@ -72,11 +82,13 @@ function Header() {
         </div>
         <div className="list">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+            {navbar?.map((item, i) => {
+                return (
+                <li key={i}>
+                    <a href={item.url}>{item.label}</a>
+                </li>
+                )
+            })}
             </ul>
         </div>
         <div className="location">

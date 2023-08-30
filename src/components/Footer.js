@@ -7,7 +7,7 @@ function Footer() {
         <div className="container">
             <div className="row">
                 <div className="col-lg-6">
-                    <p className="left-text">{footerData?.copyrightText}</p>
+                    <p>{footerData?.copyrightText}</p>
                 </div>
                 <div className="col-lg-6">
                     <p className="text-start text-lg-end">

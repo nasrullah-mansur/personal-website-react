@@ -2,8 +2,16 @@
   padding: 15px 0;
   position: absolute;
   left: 0;
+  top: 0;
   width: 100%;
   z-index: 99;
+  transition: all ease .3s;
+
+  &.fixed-top {
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ddd;
+  }
 }
 
 .header-logo {
@@ -21,6 +29,8 @@
 }
 .header-btn {
   margin-left: 35px;
+
+  color: #fff;
 }
 .main-menu {
   text-align: center;
@@ -254,7 +264,8 @@
           }
         }
 
-        a:hover {
+        a:hover,
+        a:focus {
           color: #fff;
         }
       }

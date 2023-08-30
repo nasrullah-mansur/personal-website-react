@@ -1,24 +1,29 @@
-const navbar = [
+export const navbar = [
     {
         label: 'Home',
         url: '/'
     },
     {
         label: 'About',
-        url: '/'
+        url: '/#about'
     },
     {
         label: 'Services',
-        url: '/'
+        url: '/#services'
     },
     {
         label: 'Portfolio',
-        url: '/'
+        url: '/#portfolio'
     },
     {
         label: 'Contact',
-        url: '/'
+        url: '/#contact'
     }
 ];
 
-export default navbar;
+export const themeInfo = {
+    logo: './images/logo.png',
+    favicon: 'favicon.ico',
+    title: 'Nasrullah Mansur',
+    description: 'Nasrullah Mansur: Experienced Full Stack Web Dev skilled in HTML, CSS, JavaScript, PHP, Laravel, React, Node.js. Committed to quality code and user-centric design.',
+}
