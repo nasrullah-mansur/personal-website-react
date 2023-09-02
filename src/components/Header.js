@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { GrClose, GrLocation, GrPhone } from 'react-icons/gr';
 import { FaRegEnvelope } from 'react-icons/fa';
 import {navbar, themeInfo } from '@/data/navbar';
@@ -19,13 +19,18 @@ function Header() {
   } 
 
     // Fixed menu to top;
-    window.addEventListener('scroll', function(i){
-        if(window.pageYOffset >= 200) {
-            setFixed('fixed-top');
-        } else {
-            setFixed('');
+    useEffect(() => {
+        if(typeof window !== undefined) {
+            window.addEventListener('scroll', function(i){
+                if(this.pageYOffset >= 200) {
+                    setFixed('fixed-top');
+                } else {
+                    setFixed('');
+                }
+            })
         }
-    })
+    }, [])
+    
 
   return (
     <Fragment>
