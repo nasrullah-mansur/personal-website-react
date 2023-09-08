@@ -120,7 +120,7 @@ function Portfolio() {
             </div>
             <div className="portfolio-popup-content-wrap">
                 <h3 className="popup-content-heading">{popup?.title}</h3>
-                {popup?.description}
+                <div className='popup-description' dangerouslySetInnerHTML={{__html: popup?.description}}></div>
                 <div className="portfolio-item-list">
                     <p className="p-item-title">
                         Here is some portfolio about Web Design

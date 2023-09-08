@@ -21,7 +21,7 @@ function About() {
                     className="about-content">
                         <h4 className="sub-title">About Me</h4>
                         <h2 className="section-heading">{aboutData?.title}</h2>
-                        <div className="about-desc">{aboutData?.description}</div>
+                        <div className="about-desc" dangerouslySetInnerHTML={{__html: aboutData?.description}}></div>
                         <div className="about-btns">
                             <motion.a
                             whileHover={{ scale: 1.1 }}

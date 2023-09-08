@@ -39,7 +39,7 @@ function Services() {
                                     <BsCodeSlash />
                                 </span>
                                 <h3 className="service-heading">{item.title}</h3>
-                                <p className="service-desc">{item.description}</p>
+                                <p className="service-desc" dangerouslySetInnerHTML={{__html: item.description}}></p>
                             </div>
                         </motion.div>
                     )
@@ -72,7 +72,7 @@ function Services() {
                     })}
                     </div>
                 </div>
-                <p className="popup-desc">{servicesData[service]?.details}</p>
+                <p className="popup-desc" dangerouslySetInnerHTML={{__html: servicesData[service]?.details}} ></p>
             </div>
         </div>
     </div>

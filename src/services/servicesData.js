@@ -70,7 +70,7 @@ const servicesData = [
             'JavaScript',
             'Laravel'
         ]
-    }
+    },
 ];
 
 export default servicesData;
